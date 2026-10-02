@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boithak Music Web Player</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <i class="fa-solid fa-compact-disc spin"></i>
+      <h2>Boithak</h2>
+    </div>
+    <ul class="nav-links">
+      <li class="active"><i class="fa-solid fa-house"></i> Home</li>
+      <li><i class="fa-solid fa-compass"></i> Discover</li>
+      <li><i class="fa-solid fa-list-music"></i> My Playlist</li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="top-nav">
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="customInput" placeholder="ইউটিউব ভিডিও ID বা লিংক দিন...">
+        <button id="addBtn">Add to List</button>
+      </div>
+    </header>
+
+    <section class="banner">
+      <div class="banner-text">
+        <span class="badge">Trending Now</span>
+        <h1 id="bannerTitle">Enjoy Endless Ad-Free Music</h1>
+        <p>ব্যক্তিগত প্লেলিস্ট থেকে সরাসরি কোনো বিজ্ঞাপন ছাড়া গান শুনুন</p>
+      </div>
+    </section>
+
+    <section class="track-section">
+      <h3>Playlist Songs</h3>
+      <div class="track-grid" id="trackList">
+        <!-- গানের কার্ড জাভাস্ক্রিপ্ট দিয়ে তৈরি হবে -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Player Bar -->
+  <footer class="player-bar">
+    <div class="current-track">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=100&q=80" id="currentCover" alt="Cover">
+      <div class="track-details">
+        <h4 id="currentTitle">গানের নাম</h4>
+        <p id="currentArtist">শিল্পীর নাম</p>
+      </div>
+    </div>
+
+    <div class="player-controls">
+      <div class="buttons">
+        <button id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
+        <button id="playPauseBtn" class="play-btn"><i class="fa-solid fa-play"></i></button>
+        <button id="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+      </div>
+      <div class="progress-wrap">
+        <span id="currentTime">0:00</span>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress" id="progressFill"></div>
+        </div>
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="extra-controls">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volumeSlider" min="0" max="100" value="80">
+    </div>
+  </footer>
+
+  <!-- ব্যাকগ্রাউন্ডে চালানোর গোপন অডিও ফ্রেম -->
+  <div id="hiddenPlayer" style="display:none;"></div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="playlist.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
